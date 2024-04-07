@@ -1,0 +1,23 @@
+<html>
+<script>
+function fn1(){
+    var p1 = document.getElementById("txt1").value;
+    var p2 = document.getElementById("txt2").value;
+    //var p3 = document.getElementById("txt3").value;
+    var a = parseInt(p1);
+    var b = parseInt(p2);
+    var c = a + b;
+    //var c = parseInt(p3);
+    //var s = a + "/" + b + "/" + c;
+    document.getElementById("txt3").value = c;
+    //alert(c);
+}
+</script>
+<input type="text" id="txt1">
+<input type="button" value="+" onclick="fn1()">
+<input type="text" id="txt2">
+=
+<input type="text" id="txt3">
+
+
+</html>
