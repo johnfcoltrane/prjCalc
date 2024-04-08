@@ -1,24 +1,61 @@
 <html>
 <!-- 単純な電卓 -->>
 <script>
-function fn1(){
+function fnCalc(op,a,b){
+    switch(op){
+        case '+':
+            c = a+b;
+            break;
+        case '-': 
+            c = a-b;
+            break;
+        case '*': 
+            c = a*b;
+            break;
+        case '/': 
+            c = a/b;
+            break;
+    }
+    return(c);
+}
+function fn1(op){
     var p1 = document.getElementById("txt1").value;
     var p2 = document.getElementById("txt2").value;
-    //var p3 = document.getElementById("txt3").value;
     var a = parseInt(p1);
     var b = parseInt(p2);
-    var c = a + b;
-    //var c = parseInt(p3);
-    //var s = a + "/" + b + "/" + c;
+    var c = fnCalc(op,a,b);
     document.getElementById("txt3").value = c;
-    //alert(c);
+    document.getElementById("txtOp").value = op;
 }
 </script>
-<input type="text" id="txt1">
-<input type="button" value="+" onclick="fn1()">
-<input type="text" id="txt2">
-=
-<input type="text" id="txt3">
-
-
+<body>
+<table border="0">
+    <tr>
+        <td>
+            <input type="text" id="txt1">
+        </td>
+        <td>
+            <input type="text" id="txtOp" size="1"><br>
+        </td>
+        <td>
+            <input type="text" id="txt2">
+        </td>
+        <td>
+            =
+            <input type="text" id="txt3">
+        </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> 
+            <input type="button" value="+" onclick="fn1('+')"><br>
+            <input type="button" value="-" onclick="fn1('-')"><br>
+            <input type="button" value="*" onclick="fn1('*')"><br>
+            <input type="button" value="/" onclick="fn1('/')">
+        </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+</table>
+</body>
 </html>
